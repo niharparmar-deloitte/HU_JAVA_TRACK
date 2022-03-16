@@ -1,13 +1,16 @@
 package com.javaTrack;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         FindingArea fa = new FindingArea();
-        fa.area(5.7);
-        fa.area(4);
-        fa.area(5,4);
-        fa.area(5.0,12.0);
+        fa.area(sc.nextDouble());
+        fa.area(sc.nextFloat());
+        fa.area(sc.nextFloat(), sc.nextFloat());
+        fa.area(sc.nextDouble(),sc.nextDouble());
     }
 }
 class FindingArea
