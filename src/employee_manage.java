@@ -43,6 +43,20 @@ public class employee_manage {
                     String addrs = sc.next();
                     System.out.println("Enter Phone Number: ");
                     String pnum = sc.next();
+                    int Rcnt=0;
+                    int var=0;
+                    if(pnum.length()==10){
+                        for(int j=0;j<pnum.length();j++){
+                            if(!Character.isDigit(pnum.charAt(j))){
+                                System.out.println("Invalid Phone no.");
+                                var=1;
+                            }
+                            Rcnt++;
+                        }
+                        if(Rcnt!=pnum.length()){
+                            var=1;
+                        }
+                    }
                     st.executeUpdate("insert into employee_details value('" + id + "','" + name + "','" + age + "','" + cname + "','" + desig + "','" + sal + "','" + addrs + "','" + pnum + "')");
                     System.out.println("Employee details added successfully!");
                     st.close();

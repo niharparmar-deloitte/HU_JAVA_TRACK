@@ -6,7 +6,6 @@ import java.util.Set;
 public class login_signup{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Set<String> set= new HashSet<String>();
         String jdbcURL = "jdbc:mysql://localhost:3306/sampledbase";
         String username = "root";
         String password = "nih862862";
@@ -46,7 +45,6 @@ public class login_signup{
                     System.out.println("--Registration--");
                     System.out.println("Enter Username: ");
                     String runame = sc.next();
-                    set.add(runame);
                     System.out.println("Enter Password: ");
                     String rpswd = sc.next();
                     passwordValidation pv = new passwordValidation();
@@ -59,7 +57,7 @@ public class login_signup{
                             validation= pv.isValid(rpswd);
                         }
                     }
-                    System.out.println("Enter Password Again: ");
+                    System.out.println("Re-Enter Password: ");
                     String repswd = sc.next();
                     st.executeUpdate("insert into users1 value('" + runame + "','" + rpswd + "')");
                     System.out.println("Registration Successful");
@@ -73,9 +71,8 @@ public class login_signup{
             if (option==1) {
                 System.out.println("Login Success");
             } else {
-
                 System.out.println("Already Registered");
-                System.out.println("Different User Name");
+                System.out.println("Enter Different User Name");
             }
         }
 
